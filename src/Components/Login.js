@@ -36,7 +36,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
     }
     return (
-        <div className='col-md-6 col-lg-4 mx-auto mt-5 p-4 border border-primary'>
+        <div className='col-md-6 col-lg-4 mx-auto mt-5 p-4 border border-primary rounded'>
             <h3 className='fs-2 fw-bold text-primary'>Login</h3>
 
             <form onSubmit={handleSubmit(onSubmit)} >
@@ -45,7 +45,7 @@ const Login = () => {
                         <input
                             type="email"
                             placeholder="Your Email"
-                            className="input "
+                            className="input form-control"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -59,8 +59,8 @@ const Login = () => {
                         />
 
                         <label className="label">
-                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            {errors.email?.type === 'required' && <span className="label-text-alt text-red">{errors.email.message}</span>}
+                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red">{errors.email.message}</span>}
                         </label>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const Login = () => {
                     <input
                         type="password"
                         placeholder="Password"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input form-control"
                         {...register("password", {
                             required: {
                                 value: true,
